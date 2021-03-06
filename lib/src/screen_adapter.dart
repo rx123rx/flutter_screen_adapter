@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 
 class ScreenAdapter {
-  static double _designScreenWidth;
+  static late double _designScreenWidth;
 
-  static double _designScreenHeight;
+  static late double _designScreenHeight;
 
-  static double _screenWidth;
-  static double _screenHeight;
-  static double _statusBarHeight;
+  static late double _screenWidth;
+  static late double _screenHeight;
+  static late double _statusBarHeight;
 
   static double get screenWidth => _screenWidth;
 
@@ -21,9 +21,8 @@ class ScreenAdapter {
 
   static init(BuildContext context, double designScreenWidth,
       double designScreenHeight) {
-    assert(context != null);
-    assert(designScreenWidth != null && designScreenWidth > 0);
-    assert(designScreenHeight != null && designScreenHeight > 0);
+    assert(designScreenWidth > 0);
+    assert(designScreenHeight > 0);
     _designScreenWidth = designScreenWidth;
     _designScreenHeight = designScreenHeight;
     MediaQueryData mediaQueryData = MediaQuery.of(context);
